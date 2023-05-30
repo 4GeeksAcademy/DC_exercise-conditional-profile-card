@@ -30,7 +30,10 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
 
   if (variables.name === null) variables.name = "Name, ";
-  if (variables.lastname === null) variables.lastname = "Lastname ";
+  if (variables.lastname === null) variables.lastname = "Lastname";
+  if (variables.role === null) variables.role = "Role";
+  if (variables.city === null) variables.city = "City";
+  if (variables.country === null) variables.country = "Country";
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
