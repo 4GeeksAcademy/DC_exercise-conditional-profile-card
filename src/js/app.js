@@ -49,14 +49,29 @@ function render(variables = {}) {
           <h2>${variables.role}</h2>
           <h3>${variables.city}, ${variables.country}</h3>
           <ul class="${variables.socialMediaPosition}" >
-            <li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://twitter.com/${variables.twitter}" ><i id="twitter" class="fab fa-twitter"  ></i></a></li>
             <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
+
+
     `;
 }
+// function cambio() {
+//   button.classList.toggle("fab fa-twitter");
+//   button.classList.toggle("fas fa-yin-yang");
+// }
+// var button = document
+//   .querySelector("#widget_content")
+//   .getElementById("twitter");
+// button.addEventListener("click", cambio());
+
+// function cambio() {
+//   button.classList.toggle("fab fa-twitter");
+//   button.classList.toggle("fas fa-yin-yang");
+// }
 
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
