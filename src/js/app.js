@@ -41,36 +41,21 @@ function render(variables = {}) {
   if (variables.linkedin === null)
     variables.linkedin = "school/4geeksacademyes/mycompany/";
 
-  // reset the website body with the new html output
+  // reset the website body with the new html output class="photo"
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
+          <img src="${variables.avatarURL}" class="photo" id="urlInput" />
           <h1> ${variables.name} ${variables.lastname}</h1>
           <h2>${variables.role}</h2>
           <h3>${variables.city}, ${variables.country}</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li ><a href="#" ><i id="twitter" class="fab fa-twitter" ></i></a></li>
-            <li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://twitter.com/${variables.twitter}" ><i id="twitter" class="fab fa-twitter" ></i></a></li>
+            <li><a href="https://github.com/${variables.github}"><i id="github" class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${variables.linkedin}"><i id="linkedin" class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram}"><i id="instagram" class="fab fa-instagram"></i></a></li>
           </ul> 
     `;
 }
-
-// const widget_content = document.getElementById("widget_content");
-// console.log(widget_content);
-// var trArray = widget_content.getElementsByTagName("li");
-// // trArray[0].style.color = "red";
-// console.log(trArray[0], "hijos");
-// var button = document
-//   .querySelector("#widget_content")
-//   .getElementById("twitter");
-// button.addEventListener("click", cambio());
-
-// function cambio() {
-//   button.classList.toggle("fab fa-twitter");
-//   button.classList.toggle("fas fa-yin-yang");
-// }
 
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
@@ -97,13 +82,6 @@ window.onload = function() {
     city: null
   };
   render(window.variables); //render the card for the first time
-  document.getElementById("twitter").addEventListener("click", click);
-  function click() {
-    const icono = document.getElementById("twitter");
-    icono.className = "fa-brands fa-square-twitter";
-    console.log(icono);
-    console.log("me clickaron no más");
-  }
 
   document.querySelectorAll(".picker").forEach(function(elm) {
     elm.addEventListener("change", function(e) {
@@ -121,4 +99,35 @@ window.onload = function() {
       render(Object.assign(window.variables, values)); // render again the card with new valus
     });
   });
+  // --- Modificación de los iconos (Click)---
+  document.getElementById("twitter").addEventListener("click", click);
+  function click() {
+    const icono = document.getElementById("twitter");
+    icono.className = "fa-brands fa-square-twitter";
+  }
+  document.getElementById("github").addEventListener("click", click1);
+  function click1() {
+    const icono = document.getElementById("github");
+    icono.className = "fa-brands fa-square-github";
+  }
+  document.getElementById("linkedin").addEventListener("click", click2);
+  function click2() {
+    const icono = document.getElementById("linkedin");
+    icono.className = "fa-brands fa-linkedin-in";
+  }
+  document.getElementById("instagram").addEventListener("click", click3);
+  function click3() {
+    const icono = document.getElementById("instagram");
+    icono.className = "fa-brands fa-square-instagram";
+  }
+
+  // --- Modificación del background---
+  function cambiarColorFondo(event) {
+    const color = event.target.value;
+    document.body.style.backgroundColor = color;
+  }
+
+  document
+    .getElementById("colorPicker")
+    .addEventListener("change", cambiarColorFondo);
 };

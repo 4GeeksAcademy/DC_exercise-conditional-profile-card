@@ -24,6 +24,26 @@
         </select>
       </li>
       <li>
+        <label>Cover</label>
+        <input
+          class="picker"
+          for="background"
+          type="text"
+          id="urlInput"
+          placeholder="Introduce la URL de la imagen"
+        />
+      </li>
+      <li>
+        <input type="color" id="colorPicker" class="picker" />
+        <div id="colorBox" style="width: 100px; height: 50px;"></div>
+        <!-- <script type="text/javascript">
+          function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+          }
+        </script> -->
+      </li>
+
+      <li>
         <label>Name</label>
         <input class="picker" for="name" type="text" />
       </li>
@@ -82,6 +102,16 @@
           <option value="Canada">Canada</option>
           <option value="Venezuela">Venezuela</option>
         </select>
+      </li>
+      <li>
+        <label>Profile avatar</label>
+        <input
+          class="picker"
+          for="avatarURL"
+          type="text"
+          id="urlInput"
+          placeholder="Introduce la URL de la imagen"
+        />
       </li>
     </ul>
     <div id="widget_content"></div>
